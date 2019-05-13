@@ -2,14 +2,17 @@ let userName = prompt('What is your name?');
 let userAge = prompt('How old are you?');
 
 // Clear NaN
-if (!userName) {
-	userName = '';
-}
-// Correct input
-if (!userName || isNaN(userAge)) {
+userName = !userName ? '' : userName;
+userAge = !userAge ? '' : userAge;
+
+// Repeat input
+if (!userName || !userAge || isNaN(userAge)) {
 	userName = prompt('What is your name?', userName);
 	userAge = prompt('How old are you?', userAge);
-} else {
+}
+
+// Correct input
+if (userName && userAge && !isNaN(userAge)) {
 	if (userAge < 18) {
 		alert('You are not allowed to visit this website');
 	} else if (+userAge > 17 && +userAge < 23) {
