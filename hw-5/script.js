@@ -1,4 +1,4 @@
-const userInput = () => {
+﻿const userInput = () => {
 	let firstName = prompt('Введите Имя'),
 		lastName = prompt ('Введите фамилию');
 		birthday = prompt('Введите дату рождения\nФормат "dd.mm.yyyy"');
@@ -30,16 +30,6 @@ const createNewUser = (user) => {
 			return Math.floor((new Date() - new Date(this.birthday)) / (31556926 * 1000))
 		}
 	}
-	// Object.defineProperties(newUser, {
-	// 	'firstName' : {
-	// 		set: function(e) {this.firstName = e},
-	// 		get: function() {return this.firstName}
-	// 	},
-	// 	'lastName': {
-	// 		set: function(e) {this.firstName = e},
-	// 		get: function() {return this.firstName}
-	// 	}
-	//   });
 
 	return newUser
 }
