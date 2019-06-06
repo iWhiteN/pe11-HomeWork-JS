@@ -23,6 +23,12 @@ const createNewUser = (user) => {
 		getLogin: function () {
 			return (this.firstName[0] + this.lastName).toLowerCase()
 		},
+		setFirstName(val) {
+			Object.defineProperty(this, "firstName", { value: val });
+		},
+		setLastName(val) {
+			Object.defineProperty(this, "lastName", { value: val });
+		},
 		getPassword: function () {
 			return this.firstName[0].toUpperCase() + this.lastName.toLowerCase() + new Date(this.birthday).getFullYear()
 		},
@@ -30,6 +36,9 @@ const createNewUser = (user) => {
 			return Math.floor((new Date() - new Date(this.birthday)) / (31556926 * 1000))
 		}
 	}
+
+	Object.defineProperty(newUser, "firstName", { writable: false });
+	Object.defineProperty(newUser, "lastName", { writable: false });
 
 	return newUser
 }
