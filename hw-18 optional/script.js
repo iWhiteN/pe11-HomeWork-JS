@@ -20,8 +20,8 @@ const pollTabel = (user) => {
 	while (tabelInputName !== null) {
 		tabelInputName = prompt('Введите название предмета');
 		if (tabelInputName !== null) {
-			tabelInputValue = prompt('Введите название оценки єтого предмета');
-			user.tabel[tabelInputName] = tabelInputValue
+			tabelInputValue = prompt('Введите название оценки этого предмета');
+			user.tabel[tabelInputName] = +tabelInputValue
 		}
 	}
 
@@ -31,9 +31,9 @@ const pollTabel = (user) => {
 		countRes = 0;
 
 	for (key in user.tabel) {
-		if (user.tabel[key] < 4) res += user.tabel[key];
+		if (user.tabel[key] < 4) res++
 
-		sumRes += user.tabel[key]
+		sumRes += user.tabel[key];
 		countRes++
 	}
 
