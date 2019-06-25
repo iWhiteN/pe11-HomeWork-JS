@@ -1,13 +1,13 @@
 const addList = (arr) => {
-    document.body.innerHTML += `
-                         <ul>
-                         ${arr.map(e => `
-                             ${typeof(e) === 'object' && e !== null ? 
-                                 // Optional
-                                 `<ul>${e.map(e => `<li>${e}</li>`).join("")}</ul>`
-                                  :`<li>${e}</li>`}`).join("")}
-                         </ul>
-                         `
+    return `
+            <ul>
+            ${arr.map(e => `
+                ${typeof(e) === 'object' && e !== null ? 
+                    // Optional
+                    addList(e)
+                    :`<li>${e}</li>`}`).join("")}
+            </ul>
+            `
  }
  
  // Optional
@@ -20,7 +20,7 @@ const addList = (arr) => {
  
  
  // TEST
- addList(['hello', 'world', 'Kiev', "Kharkiv", 'Odessa', 'Lviv', ['1', '2', '3', 'sea', 'user', 23]]);
+ document.body.innerHTML += addList(['hello', 'world', 'Kiev', "Kharkiv", 'Odessa', 'Lviv', ['1', '2', '3', 'sea', 'user', 23]]);
  // addList(['1', '2', '3', 'sea', 'user', 23]);
  
  // Timer
