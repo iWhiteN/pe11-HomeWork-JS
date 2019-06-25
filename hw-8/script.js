@@ -1,4 +1,4 @@
-﻿const priceBox = document.getElementById("price"),
+const priceBox = document.getElementById("price"),
       priceSelect = document.getElementById("price-select"),
       error = document.createElement("span"),
       valueInput = document.createElement("span"),
@@ -17,7 +17,7 @@ priceBox.addEventListener("focusout", e => {
 
     // Отхождение от ТЗ,  логичней проверять на корректность ввода
     // Ошибка при вводе ("Не цифры")
-    if (isNaN(e.target.value)) {
+    if (isNaN(e.target.value) || e.target.value == "" || e.target.value < 0) {
         priceBox.style.border = "";
         priceBox.style.border = '1px solid red';
     
