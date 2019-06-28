@@ -4,15 +4,9 @@ const themeText = document.querySelectorAll(".most-popular, .top-rated_title, .h
 const bcg = document.querySelectorAll(".most-popular-block, .top-rated, .hot-news")
 
 const changeThemeAll = e => {
-    for (let i = 0; i < text.length; i++) {
-        text[i].classList.toggle("new_theme_color");  
-    }
-    for (let i = 0; i < themeText.length; i++) {
-        themeText[i].classList.toggle("new_theme_color_theme");  
-    }
-    for (let i = 0; i < bcg.length; i++) {
-        bcg[i].classList.toggle("new_theme_bcg");  
-    }
+    text.forEach(e => e.classList.toggle("new_theme_color"));
+    themeText.forEach(e => e.classList.toggle("new_theme_color_theme"));
+    bcg.forEach(e => e.classList.toggle("new_theme_bcg"));
 }
 
 if (localStorage.getItem("theme")) changeThemeAll();
