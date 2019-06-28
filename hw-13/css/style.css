@@ -1,0 +1,311 @@
+/* Default */
+.center {
+    width: 1170px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Change theme */
+.new_theme_color {
+    color: goldenrod !important;
+}
+.new_theme_color_theme {
+    color: #89ca62 !important;
+}
+.new_theme_bcg{
+    background-color: rgb(149, 202, 184) !important;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d2124;
+}
+.header_logo {
+    display: flex;
+    align-items: center;
+}
+.header_logo_icon,
+.search {
+    padding: 20px;
+    background-color: #171a1c;
+    cursor: pointer;
+}
+.change_theme a{
+    font-family: Courier, open-sans;
+    font-size: 15px;
+    color: #f8f8f8;
+}
+.change_theme a:hover {
+    color: #14b9d5;
+}
+.heder_logo_name {
+    font-family: Courier, open-sans;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f8f8f8;
+    transition: 0.1s;
+}
+.heder_logo_name:hover {
+    color: #169CB4;
+}
+.navbar a {
+    font-family: Courier, open-sans;
+    font-size: 15px;
+    color: #f8f8f8;
+    margin-right: 37px;
+    text-transform: uppercase;
+}
+.navbar a:hover {
+    border-bottom: 2px solid #f8f8f8;
+    font-weight: 700;
+}
+.fa-search {
+    color: #f8f8f8;
+}
+.fa-search:hover {
+    color: #169CB4;
+}
+
+
+/* Latest News */
+.latest-news {
+    background-image: url(../img/header-bg.png);
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 127px 0 145px;
+    text-align: center;
+}
+.latest-news_slogo {
+    font-family: Courier, open-sans;
+    font-size: 27px;
+    color: #f8f8f8;
+    text-transform: uppercase;
+    margin-bottom: 44px;
+}
+.latest-news_btn {
+    display: inline-block;
+    padding: 21px;
+    font-family: Courier, open-sans;
+    font-size: 18px;
+    color: #f8f8f8;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+.news-subscribe {
+    background-color: #89ca62;
+    margin-right: 20px;
+    transition: 0.1s;
+}
+.news-subscribe:hover {
+    background-color: transparent;
+    border: 2px solid #89ca62;
+    color: #89ca62;
+    font-weight: 700;
+}
+.best {
+    background-color: #14b9d5;
+    transition: 0.1s;
+}
+.best:hover {
+    background-color: transparent;
+    border: 2px solid #14b9d5;
+    color: #14b9d5;
+    font-weight: 700;
+}
+
+
+/* Most popular posts */
+.most-popular-block {
+    background-color: #F2F2F2;
+}
+.most-popular {
+    font-size: 27px;
+    font-family: Courier, open-sans;
+    color: #18B4CF;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 39px;
+    padding-top: 45px;
+}
+.most-popular-list {
+    display: flex; 
+    flex-flow: column wrap;
+    max-height: 824px;
+}
+.cards {
+    margin-right: 23px;
+    margin-bottom: 23px;
+    transition: 0.1s;
+}
+.cards:hover {
+    transform: scale(1.05);
+}
+
+.cards-title {
+    font-size: 18px;
+    font-family: Courier, open-sans;
+    font-weight: 700;
+    color: #353A3D;
+    text-align: center;
+    padding: 16px 0;
+    background-color: #FFFFFF;
+}
+
+
+/* Our most popular posts */
+.our-most-popular {
+    background-image: url(../img/our-most-popular_bg.png);
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 148px 0;
+    text-align: center;
+}
+.our-most-popular_slogo {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Courier, open-sans;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+.our-most-popular_slogo:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 63px;
+    left: 47%;
+    width: 60px;
+    height: 3px;
+    background-color: #169CB4;
+}
+.our-most-popular_brands {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+}
+.our-most-popular_brands a {
+    cursor: default;
+}
+.our-most-popular_brands a img {
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+.our-most-popular_brands a img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Top reted */
+.top-rated_title {
+    font-size: 27px;
+    font-family: Courier, open-sans;
+    font-weight: 700;
+    color: #18B4CF;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 26px;
+}
+.top-rated_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(271.84px, 1fr));
+}
+.top-rated_list a img {
+    width: 100%;
+}
+
+/* Hot news */
+.hot-news {
+    padding-bottom: 36px;
+}
+.hot-news_list {
+    display: grid;
+    grid-gap: 20px;
+    justify-content: space-between;
+    grid-template-areas: 
+        "a a a b"
+        "c c d d"
+        "e e f f"
+        "j k k k"
+}
+.hot-news_list a:nth-child(1) {grid-area: a; display: flex}
+.hot-news_list a:nth-child(2) {grid-area: b;}
+.hot-news_list a:nth-child(3) {grid-area: c;}
+.hot-news_list a:nth-child(4) {grid-area: d;}
+.hot-news_list a:nth-child(5) {grid-area: e;}
+.hot-news_list a:nth-child(6) {grid-area: f;}
+.hot-news_list a:nth-child(7) {grid-area: j;}
+.hot-news_list a:nth-child(8) {grid-area: k; display: flex}
+
+.hot-news_list img {
+    width: 100%;
+}
+.hot-news_list_info {
+    padding: 20px;
+    align-self: center;
+}
+.hot-news_list a {
+    background-color: #F9F7F7;
+    transition: 0.1s;
+}
+.hot-news_list a:hover {
+    transform: scale(1.03);
+}
+.hot-news_list_info_subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #353A3D;
+    font-family: Courier, open-sans;
+    text-align: right;
+}
+.hot-news_list_info_text {
+    font-size: 14px;
+    color: #5B6469;
+    font-family: Courier, open-sans;
+    text-align: right;
+    margin-top: 11px;
+}
+.hot-news_title {
+    font-size: 27px;
+    font-weight: 700;
+    color: #18B4CF;
+    text-transform: uppercase;
+    font-family: Courier, open-sans;
+    padding-top: 30px;
+    padding-bottom: 26px;
+}
+
+
+/* Footer */
+.footer{
+    background-color: #1D2124;
+}
+.footer .center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.copiryting-logo {
+    display: flex;
+}
+.copiryting-text {
+    color: white;
+    font-size: 13px;
+    font-family: Courier, open-sans;
+}
+.copiryting-logo_title {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Courier, open-sans;
+    color: white;
+    transition: 0.1s;
+}
+.copiryting-logo_title:hover {
+    color: #F44217;
+}
