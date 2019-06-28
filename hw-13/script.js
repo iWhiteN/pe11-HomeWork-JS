@@ -15,7 +15,7 @@ const changeThemeAll = e => {
     }
 }
 
-if (localStorage.getItem("theme")) changeThemeAll;
+if (localStorage.getItem("theme")) changeThemeAll();
 
 changeTheme.addEventListener("click", e => {
     changeThemeAll();
