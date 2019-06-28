@@ -1,14 +1,18 @@
-﻿const images = document.getElementById("images-wrapper").children,
+const images = document.getElementById("images-wrapper").children,
       stopBtn = document.getElementById("stopBtn"),
       startBtn = document.getElementById("startBtn"),
-      timeBox = document.getElementById("timer");
+      timeBox = document.getElementById("timer"),
+      btn = document.createElement('button');
 
 let index = 0,
-    countTimer = 1000;
+    countTimer = 1000,
+    btnEvent = "start";
 
 // Первая картинка по умолчанию
 images[index].style.display = "block";
 images[index].style.opacity = "1";
+btn.innerText = 'Прекратить';
+document.body.append(btn);
 
 // Timer обратного отсчета Slider
 const timer = () => {
@@ -40,13 +44,17 @@ const fade = (el) => {
 let timerSlide = setInterval(slider, 10000);
 let timerSecond = setInterval(timer, 10);
 
-startBtn.addEventListener("click", e => {
-    countTimer = 1000;
-    timerSlide = setInterval(slider, 10000);
-    timerSecond = setInterval(timer, 10);
-})
+btn.addEventListener("click", e => {
+    if (btnEvent === "start") {
+        timerSlide = setInterval(slider, 10000);
+        timerSecond = setInterval(timer, 10);
+        btn.innerText = 'Прекратить'
+        btnEvent = "stop";
 
-stopBtn.addEventListener("click", e => {
-    clearInterval(timerSlide); 
-    clearInterval(timerSecond);
+    } else {
+        clearInterval(timerSlide); 
+        clearInterval(timerSecond);
+        btn.innerText = 'Возобновить показ'
+        btnEvent = "start";
+    }
 })
