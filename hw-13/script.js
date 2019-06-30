@@ -1,17 +1,23 @@
-const changeTheme = document.getElementById('change_theme');
-const text = document.querySelectorAll(".heder_logo_name, .navbar a, .change_theme a, .latest-news_slogo, .latest-news_btn, .copiryting-text, .copiryting-logo_title");
-const themeText = document.querySelectorAll(".most-popular, .top-rated_title, .hot-news_title, .our-most-popular_slogo");
-const bcg = document.querySelectorAll(".most-popular-block, .top-rated, .hot-news");
+const btnChangeTheme = document.getElementById('change_theme');
 
-const changeThemeAll = e => {
-    text.forEach(e => e.classList.toggle("new_theme_color"));
-    themeText.forEach(e => e.classList.toggle("new_theme_color_theme"));
-    bcg.forEach(e => e.classList.toggle("new_theme_bcg"));
+const newLinkTheme = e => {
+    let link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('href', 'css/new-theme.css');
+    document.querySelector('head').appendChild(link);
 }
 
-if (localStorage.getItem("theme")) changeThemeAll();
+const loadTheme = e => {
+    if (localStorage.getItem("new-theme")) {
+        document.querySelector('link[href="css/new-theme.css"]').remove();
+        localStorage.removeItem("new-theme");
 
-changeTheme.addEventListener("click", e => {
-    changeThemeAll();
-    localStorage.getItem("theme") ? localStorage.removeItem("theme") : localStorage.setItem("theme", "new");
-})
+    } else {
+        newLinkTheme();
+        localStorage.setItem("new-theme", "css/new-theme.css")
+    }
+}
+
+if (localStorage.getItem("new-theme")) newLinkTheme();
+
+btnChangeTheme.addEventListener("click", e => loadTheme())
