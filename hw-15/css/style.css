@@ -28,7 +28,7 @@
     font-size: 22px;
     font-weight: 700;
     color: #f8f8f8;
-    text-replace: 0.1s;
+    transition: 0.1s;
 }
 .heder_logo_name:hover {
     color: #169CB4;
